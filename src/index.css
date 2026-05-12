@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    font-family: 'Alegreya Sans', 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    letter-spacing: 0.01em;
+    color: #655651;
+    background:
+      radial-gradient(circle at top, rgba(182, 58, 61, 0.18), transparent 28%),
+      linear-gradient(180deg, #f5ece5 0%, #efe1d8 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(159, 15, 23, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(159, 15, 23, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: radial-gradient(circle at center, black 38%, transparent 85%);
+  }
+
+  a,
+  button {
+    color: inherit;
+  }
+
+  button {
+    font: inherit;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  #root {
+    min-height: 100svh;
+  }
+}
+
+@utility font-display {
+  font-family: 'Fraunces', Georgia, serif;
+}
