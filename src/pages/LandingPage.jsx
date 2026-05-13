@@ -438,6 +438,9 @@ function LandingPage() {
                     <Link to="/formulario" className="transition hover:text-[#351818]">
                         Começar terapia
                     </Link>
+                    <Link to="/admin/login" className="transition hover:text-[#351818]">
+                        Acessar painel
+                    </Link>
                 </div>
             </footer>
         </main>
