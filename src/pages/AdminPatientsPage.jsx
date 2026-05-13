@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { getAdminSession } from '../services/adminAuthService.js'
+import { useAdminSession } from '../services/adminAuthService.js'
 import { fetchPsychologistPatients } from '../services/adminPatientsService.js'
 
 function AdminPatientsPage() {
   const [patients, setPatients] = useState([])
-  const adminSession = getAdminSession()
+  const adminSession = useAdminSession()
 
   useEffect(() => {
     let isMounted = true

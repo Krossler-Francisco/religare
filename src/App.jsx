@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { getAdminSession } from './services/adminAuthService.js'
+import { useAdminSession } from './services/adminAuthService.js'
 import AdminAnalyticsPage from './pages/AdminAnalyticsPage.jsx'
 import AdminLayout from './pages/AdminLayout.jsx'
 import AdminLoginPage from './pages/AdminLoginPage.jsx'
@@ -11,7 +11,7 @@ import FormularioPage from './pages/FormularioPage.jsx'
 import LandingPage from './pages/LandingPage.jsx'
 
 function App() {
-  const adminSession = getAdminSession()
+  const adminSession = useAdminSession()
 
   return (
     <Routes>

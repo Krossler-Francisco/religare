@@ -1,6 +1,6 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import AdminSidebar from '../components/AdminSidebar.jsx'
-import { getAdminSession, logoutAdmin } from '../services/adminAuthService.js'
+import { logoutAdmin, useAdminSession } from '../services/adminAuthService.js'
 
 const pageTitles = {
   '/admin/visao-geral': {
@@ -33,7 +33,7 @@ const pageTitles = {
 function AdminLayout() {
   const navigate = useNavigate()
   const location = useLocation()
-  const adminSession = getAdminSession()
+  const adminSession = useAdminSession()
   const pageData = pageTitles[location.pathname] ?? pageTitles['/admin/visao-geral']
 
   const handleLogout = () => {
@@ -46,7 +46,7 @@ function AdminLayout() {
       <AdminSidebar onLogout={handleLogout} />
 
       <div className="min-h-screen px-3 py-3 sm:px-5 sm:py-6 lg:px-8 lg:py-8">
-        <header className="overflow-hidden rounded-[1.5rem] border border-[#e2d2ca] bg-[#fffaf5] px-4 py-3 shadow-[0_18px_50px_rgba(107,28,31,0.1)] sm:rounded-[1.75rem] sm:px-6 sm:py-5 lg:px-8">
+        <header className="overflow-hidden rounded-3xl border border-[#e2d2ca] bg-[#fffaf5] px-4 py-3 shadow-[0_18px_50px_rgba(107,28,31,0.1)] sm:rounded-[1.75rem] sm:px-6 sm:py-5 lg:px-8">
           <div className="mb-3 flex items-center justify-between rounded-xl bg-[rgba(159,15,23,0.05)] py-2.5 pr-3 pl-13 lg:hidden">
             <div>
               <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[#830910]">
