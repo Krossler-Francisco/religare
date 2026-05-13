@@ -76,7 +76,7 @@ function AdminLoginPage() {
 
     try {
       await loginAdmin({ psychologistId: psychologist.id, password })
-      navigate('/admin', { replace: true })
+      navigate('/admin/visao-geral', { replace: true })
     } catch (error) {
       setErrorMessage(error.message)
     } finally {
@@ -105,7 +105,7 @@ function AdminLoginPage() {
             <p className="font-semibold text-[#351818]">Fluxo atual</p>
             <p className="mt-2">Lista de psicologos: mock de backend em servico dedicado.</p>
             <p>Senha temporaria: admin.</p>
-            <p>Destino apos login: painel em /admin.</p>
+            <p>Destino apos login: painel em /admin/visao-geral.</p>
           </div>
         </div>
 
